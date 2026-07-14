@@ -1,0 +1,53 @@
+{
+  "name": "modelsweep",
+  "version": "0.1.0",
+  "description": "Scans repos for deprecated model IDs and invalid parameter combos using vendored, dated deprecation tables — a preflight check that fails CI before a model retirement fails prod.",
+  "author": "JaydenCJ",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "modelsweep": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test \"tests/*.test.mjs\"",
+    "smoke": "bash scripts/smoke.sh"
+  },
+  "keywords": [
+    "llm",
+    "deprecation",
+    "linter",
+    "ci",
+    "model-ids",
+    "preflight",
+    "scanner"
+  ],
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaydenCJ/modelsweep.git"
+  },
+  "homepage": "https://github.com/JaydenCJ/modelsweep#readme",
+  "bugs": {
+    "url": "https://github.com/JaydenCJ/modelsweep/issues"
+  }
+}

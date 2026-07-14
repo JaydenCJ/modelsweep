@@ -1,0 +1,10 @@
+# Pipeline config. Nobody has opened this file in a year.
+summarizer:
+  model: claude-3-opus-20240229
+  temperature: 1.2
+  top_k: 40
+
+reranker:
+  model: gemini-1.5-pro
+  temperature: 0.2
+  max_output_tokens: 256

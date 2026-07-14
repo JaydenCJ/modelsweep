@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="990" height="508" viewBox="0 0 990 508" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" xml:space="preserve">
+  <rect width="990" height="508" rx="10" fill="#0d1117"/>
+  <rect width="990" height="34" rx="10" fill="#161b22"/>
+  <circle cx="20" cy="17" r="6" fill="#ff5f57"/>
+  <circle cx="40" cy="17" r="6" fill="#febc2e"/>
+  <circle cx="60" cy="17" r="6" fill="#28c840"/>
+  <text x="495" y="21" fill="#8b949e" text-anchor="middle">modelsweep — model retirements caught before prod catches them</text>
+
+  <text x="24" y="64" fill="#7ee787">$ modelsweep scan . --at 2026-07-12</text>
+
+  <text x="24" y="94" fill="#c9d1d9">config.yaml: 1 finding(s)</text>
+  <text x="24" y="124" fill="#c9d1d9">  2:10  claude-sonnet-4-5</text>
+  <text x="24" y="144" fill="#c9d1d9">    <tspan fill="#d29922">warning W205</tspan>: max_tokens is required by the anthropic API but is not set in this call</text>
+  <text x="24" y="164" fill="#3fb950">        fix: add max_tokens</text>
+
+  <text x="24" y="194" fill="#c9d1d9">src/chat.py: 1 finding(s)</text>
+  <text x="24" y="224" fill="#c9d1d9">  3:16  gpt-4-32k</text>
+  <text x="24" y="244" fill="#c9d1d9">    <tspan fill="#f85149">error E101</tspan>: retired model: gpt-4-32k was shut down on 2025-06-06 (401 day(s) before 2026-07-12)</text>
+  <text x="24" y="264" fill="#3fb950">        fix: migrate to gpt-4o</text>
+
+  <text x="24" y="294" fill="#c9d1d9">src/client.ts: 2 finding(s)</text>
+  <text x="24" y="324" fill="#c9d1d9">  2:11  claude-opus-4-1-20250805</text>
+  <text x="24" y="344" fill="#c9d1d9">    <tspan fill="#f85149">error E102</tspan>: shutdown imminent: claude-opus-4-1-20250805 is scheduled for shutdown on 2026-08-05 — 24 day(s) after 2026-07-12</text>
+  <text x="24" y="364" fill="#3fb950">        fix: migrate to claude-opus-4-8</text>
+  <text x="24" y="394" fill="#c9d1d9">  4:3  claude-opus-4-1-20250805</text>
+  <text x="24" y="414" fill="#c9d1d9">    <tspan fill="#f85149">error E105</tspan>: temperature and top_p are both set — claude-opus-4-1-20250805 rejects requests that set both</text>
+  <text x="24" y="434" fill="#3fb950">        fix: keep one of them</text>
+
+  <text x="24" y="464" fill="#8b949e">dataset snapshot 2026-06-30, evaluated at 2026-07-12</text>
+  <text x="24" y="484" fill="#c9d1d9">scanned 3 file(s), 3 model reference(s): <tspan fill="#f85149">FAIL (3 error(s), 1 warning(s))</tspan></text>
+</svg>
