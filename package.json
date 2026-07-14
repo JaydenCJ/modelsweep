@@ -2,7 +2,7 @@
   "name": "modelsweep",
   "version": "0.1.0",
   "description": "Scans repos for deprecated model IDs and invalid parameter combos using vendored, dated deprecation tables — a preflight check that fails CI before a model retirement fails prod.",
-  "author": "JaydenCJ",
+  "author": "JaydenCJ <aisingioro.kiyon@gmail.com>",
   "license": "MIT",
   "type": "module",
   "bin": {
